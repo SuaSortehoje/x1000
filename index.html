@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RIFA DE BILHAR</title>
-   <style>
-  body {
+    <style>
+        /* Estilos CSS */
+        body {
             font-family: Arial, sans-serif;
             background-color: black;
             color: white;
@@ -17,59 +18,63 @@
             height: 100vh;
         }
         
-        h1{
+        h1 {
             text-align: center;
             color: black;
-            font-size:22px;  
+            font-size: 22px;  
         }
-      h2{ display:flex;
-           flex-direction:row;
-           justify-content:center;
-           text-align:center;
-           margin:auto;      
-        }
+        
         .container {
             background-color: teal;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        input[type="text"]{
-            width: 45%;
-            padding: 10px;
-            margin-bottom: 6px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
+        
         input[type="number"]{
-            width: 50%;
+            width: 25%;
             padding: 10px;
             margin-bottom: 6px;
+            font-weight:bold;
+            background-color:blue;
+            color:white;
             border-radius: 5px;
             border: 1px solid #ccc;
-            box-sizing: border-box;
+            box-sizing: border-box
         }
-        select {
-            width: 45%;
+        
+         input[type="text"]{
+             width: 45%;
             padding: 10px;
             margin-bottom: 6px;
+            background-color:red;
+            color:white;
+            font-weight:bold;
             border-radius: 5px;
             border: 1px solid #ccc;
             box-sizing: border-box;
-        }
-        input[type="tel"]{
-            width: 50%;
-            padding: 10px;
+         }
+          input[type="tel"]{
+              width: 18%;
+            padding: 5px;
             margin-bottom: 6px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
             background-color:black;
             color:white;
-            margin-left:5%;
-            text-align:center;
+            font-weight:bold;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+          }
+          
+          select {
+            width: 45%;
+            padding: 10px;
+            margin-bottom: 6px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
         }
+        
         button {
             padding: 10px 20px;
             background-color: #00d0ff;
@@ -79,13 +84,16 @@
             cursor: pointer;
             margin-top: 10px;
         }
+        
         button:hover {
             background-color: #00aacc;
         }
+        
         button:disabled {
             background-color: #888;
             cursor: not-allowed;
         }
+        
         #modal {
             display: none;
             background-color: rgba(0, 0, 0, 0.5);
@@ -97,6 +105,7 @@
             justify-content: center;
             align-items: center;
         }
+        
         #modal-content {
             background-color: black;
             color: white;
@@ -105,36 +114,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         
-        h {
-          color:red;
-          border-radius:10px;
-          border:5px;
-          font-weight:bold;
-      }
-      h {
-          animation:h 1s infinite;
-      }
-       @keyframes h{
-           10%{background-color:blue;}
-           80% {background-color:yellow}
-       }
-        git {
-            color:white;
-        }  
-       #valorInput{
-           display: flex; 
-           justify-content: center; 
-           align-items: center;
-            width: 28%;
-            padding: 10px;
-            margin-bottom: 6px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-            align-items:center;
-             margin-left: auto; margin-right: auto; 
-        }
-           .close {
+        .close {
             color: #aaa;
             float: right;
             font-size: 28px;
@@ -147,32 +127,71 @@
             color: black;
             text-decoration: none;
         }
-        p {
-            display:inline-block;
-            padding:0;
-        }
-        #horarioInput{
-            width:40%;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1><p>RIFA X1.000</p><br><span style="color: black;"> R$ 0.10 </span><span style="color: red;">GANHA</span><span style="color: black;"> R$ 1.000.00</span></h1>
+        <h1><p>RIFA X1.000</p><span style="color: black;"> R$ 0.10 </span><span style="color: red;">GANHA</span><span style="color: black;"> R$ 1.000.00</span></h1>
         <input type="number" id="valorInput" placeholder="Digite o valor a receber (em milhares)">
-            <select id="horarioInput">
-            <option value="10h">10h</option>
-            <option value="12h">12h</option>
-            <option value="15h">15h</option>
-            <option value="19h">19h</option>
-            <option value="21h">21h</option>
-        </select>
-        <input type="tel" id="bilharInput" placeholder="Digite o bilhar (5 números)" maxlength="5">
-      <br>
+        <select id="horarioInput">
+            <option value="10:00">10:00</option>
+            <option value="12:00">12:00</option>
+            <option value="15:00">15:00</option>
+            <option value="19:00">19:00</option>
+            <option value="21:00">21:00</option>
+        </select><br>
+        <!-- Adicionando os inputs para os bilhares -->
+        <input type="tel" id="bilharInput1" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput2" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput3" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput4" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput5" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput6" placeholder="Digite o bilhar (5 números)" maxlength="5">
+          <input type="tel" id="bilharInput7" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput8" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput9" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput10" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput11" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput12" placeholder="Digite o bilhar (5 números)" maxlength="5">
+         <input type="tel" id="bilharInput13" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput14" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput15" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput16" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput17" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput18" placeholder="Digite o bilhar (5 números)" maxlength="5">
+         <input type="tel" id="bilharInput19" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput20" placeholder="Digite o bilhar (5 números)" maxlength="5">
+     
+     
+     
+        <input type="tel" id="bilharInput21" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput22" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput23" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput24" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput25" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput26" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput27" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput28" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput29" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput30" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput31" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput32" placeholder="Digite o bilhar (5 números)" maxlength="5">
+         <input type="tel" id="bilharInput33" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput34" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput35" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput36" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput37" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput38" placeholder="Digite o bilhar (5 números)" maxlength="5">
+         <input type="tel" id="bilharInput39" placeholder="Digite o bilhar (5 números)" maxlength="5">
+        <input type="tel" id="bilharInput40" placeholder="Digite o bilhar (5 números)" maxlength="5">
+     
+     
+        
+        <br>
         <input type="text" id="nomeInput" placeholder="Digite seu nome">
-        <input type="number" id="numeroWhatsapp" placeholder="Digite seu whatsapp">
-      <button onclick="adicionarBilhar()">Adicionar Bilhar</button>
-        <button onclick="calcular()">Calcular</button>
+        <input type="number"style="background:red;width: 45%;" id="numeroWhatsapp" placeholder="Digite seu whatsapp">
+        <button onclick="adicionarBilhar()">Adicionar Bilhar</button>
+        <button id="botaoCalcular" onclick="calcular()" disabled>Calcular</button>
     </div>
 
     <div id="modal">
@@ -193,138 +212,128 @@
     <script>
         var bilhares = [];
 
-function adicionarBilhar() {
-    var bilharInput = document.getElementById('bilharInput').value;
+        function adicionarBilhar() {
+            // Limpa o array de bilhares
+            bilhares = [];
 
-    if (bilharInput.length === 5) {
-        const valorBilhar = 1000000; // Multiplica o valor de 0.10 por 1000 para converter centavos em reais
-        bilhares.push({ bilhar: bilharInput, valor: valorBilhar });
-        document.getElementById('bilharInput').value = '';
-    } else {
-        alert('Por favor, insira um número de, cinco dígitos para o bilhar.');
-    }
-}
-
-function calcular() {
-    var valor = document.getElementById('valorInput').value;
-    var nome = document.getElementById('nomeInput').value;
-    var agora = new Date();
-    var horaAtual = agora.getHours();
-    var minutosAtual = agora.getMinutes();
-
-    if (horaAtual > 21 || (horaAtual === 20 && minutosAtual > 50)) {
-        document.getElementById('botaoCalcular').disabled = true;
-        alert('O tempo limite para JOGAR foi excedido até 20:50.');
-        return;
-    }
-
-    if (nome && valor) {
-        valor = parseFloat(valor); // Alterado para parseFloat para lidar com centavos
-        if (!isNaN(valor)) {
-            let total = valor * 10000; // Multiplica o valor por 10 mil para converter centavos em reais
-            var totalPagar = valor * bilhares.length;
-            let totalReceber = total; // Alterado para utilizar o total calculado
-            var horario = document.getElementById('horarioInput').value;
-            var numeroWhatsapp = document.getElementById('numeroWhatsapp').value; // Adicionado para pegar o número de WhatsApp
-
-            showModal(nome, horario, totalPagar, totalReceber, numeroWhatsapp);
-        } else {
-            alert('Por favor, digite um valor válido.');
+            // Adiciona os bilhares nos inputs ao array
+            for (let i = 1; i <= 40; i++) {
+                var bilharInput = document.getElementById('bilharInput' + i).value;
+                
+                if (bilharInput) {
+                    if (bilharInput.length === 5) {
+                        const valorBilhar = 1000000; // Multiplica o valor de 0.10 por 1000 para converter centavos em reais
+                        bilhares.push({ bilhar: bilharInput, valor: valorBilhar });
+                        // Limpa o campo de input
+                        document.getElementById('bilharInput' + i).value = '';
+                    } else {
+                        alert('Por favor, insira um número de cinco dígitos para o bilhar ' + i + '.');
+                        return; // Retorna se um bilhar estiver incorreto
+                    }
+                }
+            }
+            // Habilita o botão de calcular após adicionar os bilhetes
+            document.getElementById('botaoCalcular').disabled = false;
         }
-    } else {
-        alert('Por favor, preencha pelo menos o nome e o valor.');
-    }
-}
 
-function showModal(nome, horario, totalPagar, totalReceber, numeroWhatsapp) {
-    var modal = document.getElementById('modal');
-    var nomePix = document.getElementById('nomePix');
-    var horarioPix = document.getElementById('horarioPix');
-    var bilharPix = document.getElementById('bilharPix');
-    var totalPagarElement = document.getElementById('totalPagar');
-    var totalReceberElement = document.getElementById('totalReceber');
-    var codigoPix = document.getElementById('codigoPix');
+        function calcular() {
+            var valor = document.getElementById('valorInput').value;
+            var nome = document.getElementById('nomeInput').value;
+            var horario = document.getElementById('horarioInput').value;
 
-    nomePix.textContent = nome;
-    horarioPix.textContent = horario;
-    bilharPix.textContent = bilhares.map(function(item) { return item.bilhar; }).join(', ');
-    totalPagarElement.textContent = totalPagar.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
-    totalReceberElement.textContent = totalReceber.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
-    codigoPix.textContent = '71992290058';
+            if (nome && valor) {
+                valor = parseFloat(valor); // Alterado para parseFloat para lidar com centavos
+                if (!isNaN(valor)) {
+                    let total = valor * 10000; // Multiplica o valor por 10 mil para converter centavos em reais
+                    var totalPagar = valor * bilhares.length;
+                    let totalReceber = total; // Alterado para utilizar o total calculado
 
-    modal.style.display = 'block';
-}
+                    showModal(nome, horario, totalPagar, totalReceber);
+                } else {
+                    alert('Por favor, digite um valor válido.');
+                }
+            } else {
+                alert('Por favor, preencha pelo menos o nome e o valor.');
+            }
+        }
 
-function copyPix() {
-    var codigoPix = document.getElementById('codigoPix');
-    var range = document.createRange();
-    range.selectNode(codigoPix);
-    window.getSelection().removeAllRanges();
-    window.getSelection().addRange(range);
-    document.execCommand('copy');
-    window.getSelection().removeAllRanges();
-    alert('Código PIX copiado!');
-}
+        function showModal(nome, horario, totalPagar, totalReceber) {
+            var modal = document.getElementById('modal');
+            var nomePix = document.getElementById('nomePix');
+            var horarioPix = document.getElementById('horarioPix');
+            var bilharPix = document.getElementById('bilharPix');
+            var totalPagarElement = document.getElementById('totalPagar');
+            var totalReceberElement = document.getElementById('totalReceber');
+            var codigoPix = document.getElementById('codigoPix');
 
-function enviarWhatsApp() {
-    var nome = document.getElementById('nomeInput').value;
-    var totalPagar = document.getElementById('totalPagar').textContent;
-    var totalReceber = document.getElementById('totalReceber').textContent;
-    
-    var numeroWhatsapp = document.getElementById('numeroWhatsapp').value;
-    var horario =
-document.getElementById('horarioInput').value;
-var  titulo = "https://multijogo-38.webnode.page/X1000/";
+            nomePix.textContent = nome;
+            horarioPix.textContent = horario;
+            bilharPix.textContent = bilhares.map(function(item) { return item.bilhar; }).join(', ');
+            totalPagarElement.textContent = totalPagar.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+            totalReceberElement.textContent = totalReceber.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+            codigoPix.textContent = '71992290058';
 
-  var multijogo = "MULTIJOGO X10000";
-  const codigo = Math.floor(100000 + Math.random() * 900000);
-     
-   var responsabilidade = "E de Responsabilidade do Apostador Conferir sua pule antes da Extracao";
-   
+            modal.style.display = 'block';
+        }
 
-    var mensagem = `${titulo}
-                *${multijogo}*
-     
-    *Olá,*  ${nome}
-    
-              DATA E HORA ATUAL
- *Data: ${new Date().toLocaleDateString()}*       *Hora: ${new Date().toLocaleTimeString()}*
-  
-                Valor a pagar : R$ ${totalPagar}
-  
-              Valor a receber : R$ ${totalReceber}
-  
-                    EXTRACAO : ${horario}
-     
-                   Bilhares : ${bilhares.map(function(item) { return item.bilhar; }).join(' - ')}
-                   
+        function copyPix() {
+            var codigoPix = document.getElementById('codigoPix');
+            var range = document.createRange();
+            range.selectNode(codigoPix);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges();
+            alert('Código PIX copiado!');
+        }
+
+        function enviarWhatsApp() {
+            var nome = document.getElementById('nomeInput').value;
+            var totalPagar = document.getElementById('totalPagar').textContent;
+            var totalReceber = document.getElementById('totalReceber').textContent;
+            var numeroWhatsapp = document.getElementById('numeroWhatsapp').value;
+            var horario = document.getElementById('horarioInput').value;
+            var titulo = "https://multijogo-38.webnode.page/X1000/";
+            var multijogo = "MULTIJOGO X10000";
+            const codigo = Math.floor(100000 + Math.random() * 900000);
+            let responsabilidade = "E de Responsabilidade do Apostador Conferir sua pule antes da Extracao\n\nBoa Sorte!!!";
+            
+            var mensagem = `${titulo}
+                        *${multijogo}*
+        
+            *Olá,*  ${nome}
+            
+                      *DATA E HORA ATUAL*
+         Data : *${new Date().toLocaleDateString()}*     Hora : *${new Date().toLocaleTimeString()}*
+            
+                     Valor a pagar : R$ ${totalPagar}
+            
+                   Valor a receber : R$ ${totalReceber}
+            
+                         EXTRACAO : ${horario}
+            
+               Bilhares : ${bilhares.map(function(item) { return item.bilhar; }).join(' - ')}
+                           
             *Nº Controle da Aposta* : *${codigo}*
- 
-*${responsabilidade}*`;
+        
+            *${responsabilidade}*`;
 
             var mensagemEncoded = encodeURIComponent(mensagem);
-var linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsapp}&text=${mensagemEncoded}`;
-window.open(linkWhatsApp, '_blank');
+            var linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsapp}&text=${mensagemEncoded}`;
+            window.open(linkWhatsApp, '_blank');
+        }
 
-}
+        function fecharModal() {
+            var modal = document.getElementById('modal');
+            modal.style.display = 'none';
+        }
 
-function fecharModal() {
-    var modal = document.getElementById('modal');
-    modal.style.display = 'none';
-}
-
-window.onclick = function(event) {
-    var modal = document.getElementById('modal');
-    if (event.target == modal) {
-        modal.style.display = 'none';
-    }
-}
-function closeModal() {
-    var modal = document.getElementById('modal');
-    modal.style.display = 'none';
-}
-
+        window.onclick = function(event) {
+            var modal = document.getElementById('modal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
     </script>
 </body>
 </html>
- 
