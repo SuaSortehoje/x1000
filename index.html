@@ -77,7 +77,7 @@
         
         button {
             padding: 10px 20px;
-            background-color: #00d0ff;
+            background-color: #00ff00;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -129,11 +129,13 @@
         }
     </style>
 </head>
-<body>
+<body onload="verificarHorario()">
+
     <div class="container">
         <h1><p>RIFA X1.000</p><span style="color: black;"> R$ 0.10 </span><span style="color: red;">GANHA</span><span style="color: black;"> R$ 1.000.00</span></h1>
         <input type="number" id="valorInput" placeholder="Digite o valor a receber (em milhares)">
-        <select id="horarioInput">
+       <select id="horarioInput" onchange="verificarHorario()">
+   <option value=" *VALIDO SOMENTE PARA PROXIMA EXTRACAO* ">EXTRACAO </option>
             <option value="10:00">10:00</option>
             <option value="12:00">12:00</option>
             <option value="15:00">15:00</option>
@@ -296,7 +298,7 @@
             var titulo = "https://multijogo-38.webnode.page/X1000/";
             var multijogo = "MULTIJOGO X10000";
             const codigo = Math.floor(100000 + Math.random() * 900000);
-            let responsabilidade = "E de Responsabilidade do Apostador Conferir sua pule antes da Extracao\n\nBoa Sorte!!!";
+            let responsabilidade = "E de Responsabilidade do Apostador Conferir sua pule antes da Extracao*\n\n*Boa Sorte!!!";
             
             var mensagem = `${titulo}
                         *${multijogo}*
@@ -312,11 +314,11 @@
             
                          EXTRACAO : ${horario}
             
-               Bilhares : ${bilhares.map(function(item) { return item.bilhar; }).join(' - ')}
+        Bilhares : ${bilhares.map(function(item) { return item.bilhar; }).join(' - ')}
                            
-            *Nº Controle da Aposta* : *${codigo}*
+             *Nº Controle da Aposta* : *${codigo}*
         
-            *${responsabilidade}*`;
+*${responsabilidade}*`;
 
             var mensagemEncoded = encodeURIComponent(mensagem);
             var linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsapp}&text=${mensagemEncoded}`;
@@ -334,6 +336,19 @@
                 modal.style.display = 'none';
             }
         }
+        function verificarHorario() {
+    var horarioAtual = new Date().getHours() + ':' + new Date().getMinutes();
+    var options = document.getElementById('horarioInput').options;
+
+    for (var i = 0; i < options.length; i++) {
+        if (options[i].value < horarioAtual) {
+            options[i].setAttribute('disabled', 'disabled');
+        } else {
+            options[i].removeAttribute('disabled');
+        }
+    }
+}
+
     </script>
 </body>
 </html>
