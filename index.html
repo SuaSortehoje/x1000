@@ -65,7 +65,10 @@
             border: 1px solid #ccc;
             box-sizing: border-box;
           }
-          
+          input[type="tel"]:hover{
+            background:white;
+            
+              }
           select {
             width: 45%;
             padding: 10px;
@@ -136,6 +139,7 @@
         <input type="number" id="valorInput" placeholder="Digite o valor a receber (em milhares)">
        <select id="horarioInput" onchange="verificarHorario()">
    <option value=" *VALIDO SOMENTE PARA PROXIMA EXTRACAO* ">EXTRACAO </option>
+      <option value="06:00">6:00</option>
             <option value="10:00">10:00</option>
             <option value="12:00">12:00</option>
             <option value="15:00">15:00</option>
